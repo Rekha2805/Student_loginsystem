@@ -1,0 +1,309 @@
+
+/* Color palette */
+:root {
+    --light-purple: #C4A4DA;
+    --medium-purple: #9E7EB5;
+    --dark-purple: #7F5D99;
+    --deep-purple: #4C2365;
+    --white: #FFFFFF;
+    --light-bg: #F8F4FB;
+    --text-color: #35233F;
+}
+
+/* General styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        var(--light-bg),
+        var(--light-purple)
+    );
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Login and registration cards */
+.card {
+    width: 100%;
+    max-width: 420px;
+    margin: 30px auto;
+    padding: 35px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(76, 35, 101, 0.15);
+}
+
+h1 {
+    color: var(--deep-purple);
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: var(--deep-purple);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #776A80;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #D8C8E3;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--dark-purple);
+    box-shadow: 0 0 0 3px rgba(158, 126, 181, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Password field and Lucide icons */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background: transparent;
+    border: none;
+    color: var(--dark-purple);
+    cursor: pointer;
+}
+
+.toggle-password svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.8;
+}
+
+/* Buttons */
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 18px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: var(--dark-purple);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.primary-btn:hover {
+    background: var(--deep-purple);
+    transform: translateY(-1px);
+}
+
+.primary-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Login and registration links */
+.switch-text {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.switch-text a {
+    color: var(--dark-purple);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch-text a:hover {
+    color: var(--deep-purple);
+    text-decoration: underline;
+}
+
+/* Dashboard */
+.dashboard {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(76, 35, 101, 0.15);
+    overflow: hidden;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 30px;
+    background: #F0E5F7;
+    border-bottom: 1px solid #E0D0EB;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 8px;
+}
+
+.dashboard-header p {
+    color: #776A80;
+    overflow-wrap: anywhere;
+}
+
+/* Logout uses the same primary button style as Save Notes */
+.logout-btn {
+    width: auto;
+    min-width: 110px;
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+.dashboard-content {
+    padding: 30px;
+}
+
+/* Saved notes */
+.notes-section {
+    margin-top: 35px;
+}
+
+.notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.note-card {
+    padding: 18px;
+    border: 1px solid #E1D3EB;
+    border-left: 5px solid var(--medium-purple);
+    border-radius: 9px;
+    background: #FCFAFE;
+    overflow-wrap: anywhere;
+}
+
+.note-card h3 {
+    color: var(--deep-purple);
+    margin-bottom: 10px;
+}
+
+.note-card p {
+    white-space: pre-wrap;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #F2E7F7;
+    color: var(--deep-purple);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #E4D1F0;
+}
+
+.delete-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.empty-message {
+    color: #776A80;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .card {
+        padding: 25px 20px;
+        margin: 15px auto;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+}
